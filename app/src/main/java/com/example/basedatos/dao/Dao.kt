@@ -4,7 +4,6 @@ import androidx.room.Insert
 import androidx.room.Query
 import com.example.basedatos.model.Usuario
 
-interface DAO {
     interface UsuarioDao {
         @Insert
         suspend fun insertarUsuario(usuario: Usuario)
@@ -12,4 +11,3 @@ interface DAO {
         suspend fun obtenerUsuarios():
                 List<Usuario>
     }
-}
