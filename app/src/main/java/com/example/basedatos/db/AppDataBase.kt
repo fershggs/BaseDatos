@@ -11,7 +11,6 @@ import com.example.basedatos.model.Usuario
 @Database(entities = [Usuario::class],
     version = 1)
 @TypeConverters(Converters::class)
-abstract class AppDatabase :
-    RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
 }

@@ -8,8 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class UsuarioViewModel(private val repository: UsuarioRepository) : ViewModel() {
-    private val _usuarios =
-        MutableStateFlow<List<Usuario>>(emptyList())
+    private val _usuarios = MutableStateFlow<List<Usuario>>(emptyList())
     val usuarios = _usuarios
     fun cargarUsuarios() {
         viewModelScope.launch {
@@ -22,6 +21,9 @@ class UsuarioViewModel(private val repository: UsuarioRepository) : ViewModel() 
         }
     }
     fun agregarUsuarios(usuario: Usuario){
-        viewModelScope.launch { repository.addUsuario(usuario) }
+        viewModelScope.launch {
+            repository.addUsuario(usuario)
+            cargarUsuarios()
+        }
     }
 }
