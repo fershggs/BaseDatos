@@ -3,7 +3,6 @@ package com.example.basedatos.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-class Usuario(i: Int, toString: String, toInt: Int) {
     @Entity("usuarios_table")
     data class Usuario(
         @PrimaryKey(autoGenerate = true)
@@ -11,4 +10,3 @@ class Usuario(i: Int, toString: String, toInt: Int) {
         val nombre: String,
         val edad: Int
     )
-}
